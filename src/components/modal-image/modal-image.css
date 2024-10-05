@@ -1,0 +1,41 @@
+.ModalImage {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background: #00000079;
+  z-index: 1;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.ModalImage__open {
+  display: flex;
+}
+.Modal {
+  width: 98%;
+  height: 98%;
+  /* background: #2e3c45; */
+  background: linear-gradient(
+    to right,
+    #2e3c45,
+    #2e3c45,
+    #2e3c45,
+    #2e3c45,
+    #2e3c45,
+    #2e3c45,
+    #2e3c45,
+    #2e3c45,
+    #fff,
+    #fff,
+    #fff
+  );
+  /* background: #fff; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Modal img {
+  /* width: 100%; */
+  height: 100%;
+  /* border-radius: 16px; */
+}
