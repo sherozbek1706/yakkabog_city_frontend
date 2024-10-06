@@ -1,0 +1,188 @@
+.Sidebar {
+  transition: 0.4s ease-in-out;
+  width: 300px;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  left: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to top, #d7d8de, #e4e5eb, #f0f1f5);
+}
+.Sidebar.active {
+  left: -300px;
+}
+.SidebarBar {
+  position: absolute;
+  left: 0;
+  top: 85px;
+  width: 100px;
+  height: 40px;
+  padding: 5px 10px;
+  border-radius: 0 50px 50px 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: linear-gradient(to right, #d7d8de, #e4e5eb, #f0f1f5);
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+.SidebarBar .icon {
+  font-size: 18px;
+  cursor: pointer;
+  color: #171717;
+}
+.SidebarXmark {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 34px 30px;
+  height: 100px;
+}
+.SidebarXmark .icon {
+  font-size: 26px;
+  color: #17171783;
+  transition: 0.3s ease-in-out;
+}
+.SidebarXmark .icon:hover {
+  color: #00a2d4;
+  cursor: pointer;
+}
+.Sidebar__top {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.Sidebar__logo {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 70px;
+}
+.Sidebar__logo img {
+  height: 80px;
+}
+.Sidebar__logo h3 {
+  font-weight: 700;
+  line-height: 20px;
+  font-size: 24px;
+  text-transform: capitalize;
+  /* letter-spacing: -0.2px; */
+  color: #00a2d4;
+  font-family: "Bebas Neue", fantasy;
+}
+.Sidebar_nav {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 50px;
+}
+.Sidebar_nav a {
+  display: flex;
+  width: 240px;
+  height: 50px;
+  margin: 3px 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 20px;
+  border-radius: 40px;
+  text-decoration: none;
+  transition: 0.4s ease-in-out;
+}
+.Sidebar_nav a .icon {
+  color: #171717;
+  font-size: 20px;
+  transition: 0.3s ease-in-out;
+}
+.Sidebar_nav a p {
+  color: #171717;
+  font-weight: 500;
+  margin: 0 15px;
+  font-size: 15px;
+  letter-spacing: -0.2px;
+  text-transform: uppercase;
+  transition: 0.3s ease-in-out;
+}
+
+.Sidebar_nav a:hover {
+  background-color: #fafafa;
+}
+/* .Sidebar_nav a:focus {
+  background-color: #171717;
+}
+.Sidebar_nav a:focus .icon {
+  color: #ffffff;
+}
+.Sidebar_nav a:focus p {
+  color: #ffffff;
+} */
+.Sidebar__bottom {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Sidebar__bottom button {
+  width: 240px;
+  border-radius: 40px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 20px;
+  height: 50px;
+  margin-bottom: 50px;
+  transition: 0.3s ease-in-out;
+}
+.Sidebar__bottom button .icon {
+  color: #171717;
+  font-size: 20px;
+  transition: 0.3s ease-in-out;
+}
+
+.Sidebar__bottom button p {
+  color: #171717;
+  font-weight: 600;
+  margin: 0 15px;
+  font-size: 16px;
+  letter-spacing: -0.2px;
+  text-transform: uppercase;
+  transition: 0.3s ease-in-out;
+}
+.Sidebar__bottom button:hover {
+  background-color: coral;
+  cursor: pointer;
+}
+.Sidebar__bottom button:hover p {
+  color: #fff;
+}
+.Sidebar__bottom button:hover .icon {
+  color: #fff;
+}
+.SidebarNav__link {
+  background-color: #171717;
+}
+.Sidebar_nav .SidebarNav__link .icon {
+  color: #ffffff;
+}
+.Sidebar_nav .SidebarNav__link p {
+  color: #ffffff;
+}
+.Sidebar_nav .SidebarNav__link:hover {
+  background: #171717;
+}
+
+.Sidebar_nav .SidebarNav__link:hover .icon {
+  color: #fff;
+}
+.Sidebar_nav .SidebarNav__link:hover p {
+  color: #fff;
+}
