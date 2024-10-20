@@ -1,0 +1,56 @@
+.Admin {
+  width: 100%;
+  padding: 40px;
+}
+
+.MainTable {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.MainTable__list {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.MainTable__list tr {
+  background-color: #ffffff;
+}
+
+.MainTable__list thead tr {
+  /* background: #fffb78; */
+  background: linear-gradient(to left, #d7d8de, #e4e5eb, #f0f1f5);
+}
+
+.MainTable__list tr th {
+  font-weight: 500;
+  color: #000;
+  border: 1px solid #eeeedd79;
+  text-align: center;
+  padding: 16px 8px;
+  font-size: 14px;
+}
+
+.MainTable__list tr td {
+  padding: 8px;
+  max-width: 150px;
+  text-align: center;
+  color: #000;
+  font-weight: 400;
+  font-size: 14px;
+  border: 1px solid #0202010c;
+}
+
+.MainTable__list tr:nth-child(even) {
+  background-color: #fff3f3;
+}
+
+.MainTable__list tbody .select-tr {
+  /* border: 2px solid #; */
+  /* background: #aecbeb; */
+  background: linear-gradient(to left, #64b5f6, #90caf9, #bbdefb);
+}
+.MainTable__list tbody .select-tr td {
+  font-weight: 600;
+}
