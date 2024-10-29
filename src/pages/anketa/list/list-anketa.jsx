@@ -75,7 +75,7 @@ export const ListAnketa = () => {
                 <th></th>
                 <th>To'liq ism</th>
                 <th>Sana</th>
-                <th>Telefon raqam</th>
+                <th>Telefon raqam <br />Номер телефона</th>
                 <th>Qo'sh/ Telefon raqam</th>
                 <th>To'lov</th>
                 <th>
