@@ -72,7 +72,7 @@ export const ListAnketa = () => {
             <thead>
               <tr>
                 <th>No</th>
-                <th>Id</th>
+                <th></th>
                 <th>To'liq ism</th>
                 <th>Sana</th>
                 <th>Telefon raqam</th>
