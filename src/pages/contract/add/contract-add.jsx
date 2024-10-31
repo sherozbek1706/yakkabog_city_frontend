@@ -4,7 +4,7 @@ import { Fragment } from "react";
 import { Header } from "../../../components";
 import { MainContext } from "../../../utils/context/context";
 import { Errors } from "../../../utils/errors";
-import { info_notify } from "../../../shared/notify";
+import { info_notify, success_notify } from "../../../shared/notify";
 import { axiosInstance } from "../../../shared/services";
 import { useMutation, useQueryClient } from "react-query";
 import { useNavigate } from "react-router-dom";
@@ -147,15 +147,8 @@ export const ContractAdd = () => {
   const mutation = useMutation(contractData, {
     onSuccess: (data) => {
       queryClient.invalidateQueries("data");
-      console.log(data);
-
-      // localStorage.setItem("token", token);
-      // const decode = jwtDecode(token);
-      // localStorage.setItem("role", decode.user.role);
-      // success_notify("Login qildingiz!");
-      // setTimeout(() => {
-      //   window.location.assign("/");
-      // }, 500);
+      success_notify("Shartnoma tuzildi!");
+      navigate("/anketa-list");
     },
     onError: (error) => {
       Errors(error);
