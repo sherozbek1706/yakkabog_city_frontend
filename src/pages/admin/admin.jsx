@@ -16,7 +16,7 @@ export const Admin = () => {
   if (error) Errors(error);
   return (
     <Fragment>
-      <Header title="ADMINLAR BO'LIMI" />
+      <Header title="AДМИНЛAР БЎЛИМИ" />
       <div className="Admin">
         <div className="MainTable">
           <table className="MainTable__list">
