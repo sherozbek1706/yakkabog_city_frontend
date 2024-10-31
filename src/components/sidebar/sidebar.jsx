@@ -8,6 +8,11 @@ export const Sidebar = () => {
   const closeBar = () => {
     setSidebar("active");
   };
+  const handleLogout = async () => {
+    window.localStorage.clear();
+    window.location.assign("/login");
+  };
+
   return (
     <Fragment>
       {sidebar === "active" ? (
@@ -110,7 +115,7 @@ export const Sidebar = () => {
           </div>
         </div>
         <div className="Sidebar__bottom">
-          <button>
+          <button onClick={handleLogout}>
             <i className="fa-solid fa-right-from-bracket icon"></i>
             <p>Chiqish</p>
           </button>
