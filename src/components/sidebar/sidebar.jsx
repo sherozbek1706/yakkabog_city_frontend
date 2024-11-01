@@ -42,8 +42,20 @@ export const Sidebar = () => {
                 isActive ? "SidebarNav__link" : null
               }
             >
+              <i className="fa-solid fa-house icon"></i>
+              {/* <i className="fa-solid fa-passport icon"></i> */}
+              <p>Asosiy Sahifa</p>
+            </NavLink>
+
+            <NavLink
+              to={"/contract-list"}
+              onClick={closeBar}
+              className={({ isActive }) =>
+                isActive ? "SidebarNav__link" : null
+              }
+            >
               <i className="fa-solid fa-passport icon"></i>
-              <p>Shartnomalar</p>
+              <p>Shartnoma</p>
             </NavLink>
 
             <NavLink
