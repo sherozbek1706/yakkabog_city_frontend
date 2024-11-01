@@ -1,0 +1,56 @@
+.ContractList {
+  width: 100%;
+  padding: 40px;
+}
+.ContractList__boxes {
+  width: 100%;
+  display: flex;
+  padding: 20px 0;
+}
+.ContractListBoxes__box {
+  padding: 20px 30px;
+  border-radius: 16px;
+  /* background: #1c254155; */
+  transition: 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  margin: 20px;
+}
+.ContractListBoxes__box:hover {
+  background: #f5efff;
+  cursor: pointer;
+}
+.ContractListBoxes__box .icon {
+  font-size: 145px;
+  color: #00a2d4;
+}
+.ContractListBoxes__box__title {
+  font-weight: 600;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin: 10px 0;
+}
+.ContractListBoxes__box__date {
+  font-weight: 400;
+  font-size: 12px;
+}
+.ContractListBoxes__box__btn {
+  width: 100%;
+  margin: 10px 0;
+  padding: 8px 0;
+  border-radius: 8px;
+  background: #fff;
+  border: 2px solid #00a2d4;
+  transition: 0.3s ease-in-out;
+  font-weight: 500;
+  color: #050505;
+}
+.ContractListBoxes__box__btn:hover {
+  background: #00a2d4;
+  color: #fff;
+  cursor: pointer;
+}

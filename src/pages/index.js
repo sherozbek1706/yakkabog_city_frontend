@@ -8,3 +8,4 @@ export * from "./anketa/anketa";
 export * from "./anketa/list/list-anketa";
 export * from "./model/get-model/get-model";
 export * from "./contract/add/contract-add";
+export * from "./contract/list/contract-list";

@@ -4,8 +4,7 @@ import "./home.css";
 export const Home = () => {
   return (
     <Fragment>
-      <Header title={"SHARTNOMALAR"} />
-      
+      <Header title={"ASOSIY SAHIFA"} />
     </Fragment>
   );
 };
