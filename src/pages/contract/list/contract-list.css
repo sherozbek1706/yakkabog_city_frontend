@@ -8,49 +8,96 @@
   padding: 20px 0;
 }
 .ContractListBoxes__box {
-  padding: 20px 30px;
-  border-radius: 16px;
-  /* background: #1c254155; */
-  transition: 0.2s ease-in-out;
+  width: 320px;
   display: flex;
   flex-direction: column;
+  background: linear-gradient(
+    45deg,
+    #f8f9fa,
+    #457b9d,
+    #457b9d,
+    #ced4da,
+    #adb5bd6e
+  );
   align-items: flex-start;
   justify-content: center;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
-    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  padding: 40px 20px;
   margin: 20px;
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  transition: 0.4s ease-in-out;
 }
 .ContractListBoxes__box:hover {
-  background: #f5efff;
   cursor: pointer;
 }
-.ContractListBoxes__box .icon {
-  font-size: 145px;
-  color: #00a2d4;
+.ContractListTitle {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  width: 100%;
+  margin-bottom: 30px;
 }
-.ContractListBoxes__box__title {
+
+.ContractListTitle .icon {
+  font-size: 44px;
+  margin-right: 20px;
+  color: #fff;
+}
+.ContractListTitle p {
   font-weight: 600;
-  font-size: 20px;
+  letter-spacing: -0.5px;
+  font-size: 24px;
+  color: #000;
+  font-family: "Poppins";
+  letter-spacing: -0.7px;
+  /* backdrop-filter: blur(50px); */
+  padding: 2px 5px;
+  border-radius: 4px;
   text-transform: uppercase;
-  margin: 10px 0;
+  /* box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px; */
 }
-.ContractListBoxes__box__date {
-  font-weight: 400;
-  font-size: 12px;
+
+.ContractListInfo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.ContractListInfo .Infos {
+  width: 100%;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 15px;
+}
+.Infos .icon {
+  font-size: 16px;
+  margin-right: 10px;
+  color: #ffff00;
+}
+.Infos p {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+  color: #fff;
 }
 .ContractListBoxes__box__btn {
   width: 100%;
-  margin: 10px 0;
-  padding: 8px 0;
+  height: 40px;
+  font-weight: 700;
   border-radius: 8px;
-  background: #fff;
-  border: 2px solid #00a2d4;
+  border: none;
+  background: #fff3b0;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  margin-top: 20px;
   transition: 0.3s ease-in-out;
-  font-weight: 500;
-  color: #050505;
-}
-.ContractListBoxes__box__btn:hover {
-  background: #00a2d4;
-  color: #fff;
   cursor: pointer;
+}
+.ContractListBoxes__box a {
+  width: 100%;
+  text-decoration: none;
+  color: #000;
 }

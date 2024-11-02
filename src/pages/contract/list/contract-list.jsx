@@ -1,31 +1,76 @@
 import React, { Fragment } from "react";
 import "./contract-list.css";
 import { Header } from "../../../components";
+import { getRequest } from "../../../request";
+import { useQuery } from "react-query";
+import { Errors } from "../../../utils/errors";
+import { Link } from "react-router-dom";
+
+const fetchData = async () => {
+  const data = await getRequest("contract/list");
+  return data;
+};
 
 export const ContractList = () => {
+  const { data, error, isLoading, refetch, isSuccess } = useQuery(
+    "anketa",
+    fetchData
+  );
+
+  if (error) Errors(error);
+  if (isSuccess) console.log(data?.data?.data?.result);
+
   return (
     <Fragment>
       <Header title={"SHARTNOMALAR"} />
       <div className="ContractList">
         <div className="ContractList__boxes">
-          <div className="ContractListBoxes__box">
-            <i className="fa-solid fa-folder-open icon"></i>
-            <p className="ContractListBoxes__box__title">1-shartnoma</p>
-            <p className="ContractListBoxes__box__date">01-11-2024</p>
-            <button className="ContractListBoxes__box__btn">KIRISH</button>
-          </div>
-          <div className="ContractListBoxes__box">
-            <i className="fa-solid fa-folder-open icon"></i>
-            <p className="ContractListBoxes__box__title">2-shartnoma</p>
-            <p className="ContractListBoxes__box__date">05-11-2024</p>
-            <button className="ContractListBoxes__box__btn">KIRISH</button>
-          </div>
-          <div className="ContractListBoxes__box">
-            <i className="fa-solid fa-folder-open icon"></i>
-            <p className="ContractListBoxes__box__title">3-shartnoma</p>
-            <p className="ContractListBoxes__box__date">26-11-2024</p>
-            <button className="ContractListBoxes__box__btn">KIRISH</button>
-          </div>
+          {isLoading ? (
+            <h3>Загрузка...</h3>
+          ) : (
+            <Fragment>
+              {data?.data?.data?.result?.map((elem) => (
+                <div className="ContractListBoxes__box">
+                  <div className="ContractListTitle">
+                    <i className="fa-solid fa-file-invoice icon"></i>
+                    <p>{elem?.id} - shartnoma</p>
+                  </div>
+                  <div className="ContractListInfo">
+                    <div className="Infos">
+                      <i class="fa-solid fa-diamond icon"></i>
+                      <p>{elem?.fullName}</p>
+                    </div>
+                    <div className="Infos">
+                      <i class="fa-solid fa-diamond icon"></i>
+                      <p>
+                        {elem?.number_of_rooms} Xonalik | {elem?.field} m
+                        <sup>2</sup>
+                      </p>
+                    </div>
+                    <div className="Infos">
+                      <i class="fa-solid fa-diamond icon"></i>
+                      <p>
+                        {elem?.floor}-Etaj | {elem?.apartment_number}-Xonadon
+                      </p>
+                    </div>
+                    <div className="Infos">
+                      <i class="fa-solid fa-diamond icon"></i>
+                      <p>{elem?.phone_number1}</p>
+                    </div>
+                    <div className="Infos">
+                      <i class="fa-solid fa-diamond icon"></i>
+                      <p>{elem?.phone_number2}</p>
+                    </div>
+                  </div>
+                  <Link to={`/contract-get/` + elem?.id}>
+                    <button className="ContractListBoxes__box__btn">
+                      KIRISH
+                    </button>
+                  </Link>
+                </div>
+              ))}
+            </Fragment>
+          )}
         </div>
       </div>
     </Fragment>
