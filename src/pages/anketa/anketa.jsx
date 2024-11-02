@@ -57,16 +57,16 @@ export const Anketa = () => {
       )
       .required("Passport series is required"),
     phone_number1: Yup.string()
-      .matches(
-        /^(?:\+998|998)?[0-9]{9}$/,
-        "Phone number must be a valid Uzbekistan phone number."
-      )
+      // .matches(
+      //   /^(?:\+998|998)?[0-9]{9}$/,
+      //   "Phone number must be a valid Uzbekistan phone number."
+      // )
       .required("Phone number is required"),
     phone_number2: Yup.string()
-      .matches(
-        /^(?:\+998|998)?[0-9]{9}$/,
-        "Phone number must be a valid Uzbekistan phone number."
-      )
+      // .matches(
+      //   /^(?:\+998|998)?[0-9]{9}$/,
+      //   "Phone number must be a valid Uzbekistan phone number."
+      // )
       .required("Phone number is required"),
     PINFL: Yup.string().length(14).required(),
   });
