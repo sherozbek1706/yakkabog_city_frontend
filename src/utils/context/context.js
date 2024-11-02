@@ -25,6 +25,8 @@ const MainProvider = ({ children }) => {
   const [open_modal, setOpen_modal] = useState(false);
   const [modal_image, setModal_image] = useState(false);
 
+  const [shartnoma, setShartnoma] = useState(null);
+
   return (
     <MainContext.Provider
       value={{
@@ -68,6 +70,8 @@ const MainProvider = ({ children }) => {
         setOpen_modal,
         modal_image,
         setModal_image,
+        shartnoma,
+        setShartnoma,
       }}
     >
       {children}
