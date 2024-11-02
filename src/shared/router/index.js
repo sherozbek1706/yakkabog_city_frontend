@@ -5,7 +5,9 @@ import {
   Admin,
   Anketa,
   ContractAdd,
+  ContractGet,
   ContractList,
+  ContractPDF,
   Floor,
   GetModel,
   Home,
@@ -30,9 +32,11 @@ export const RouterComponent = () => {
           <Route path="/anketa-list" element={<ListAnketa />} />
           <Route path="/contract-add" element={<ContractAdd />} />
           <Route path="/contract-list" element={<ContractList />} />
+          <Route path="/contract-get/:id" element={<ContractGet />} />
         </Route>
         <Route path="/model" element={<Model />} />
-        <Route path="/get-model/" element={<GetModel />} />
+        <Route path="/get-model" element={<GetModel />} />
+        <Route path="/pdf-contract" element={<ContractPDF />} />
       </Router>
     </Fragment>
   );
