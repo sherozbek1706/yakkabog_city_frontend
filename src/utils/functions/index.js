@@ -62,3 +62,106 @@ export const ipotekaSummaMinus = (summ) => {
     return { qolgan_summa: 0, ipoteka: Math.abs(summ) };
   }
 };
+
+//  *****************
+
+export const numberToUzbekWords = (num) => {
+  if (num === 0) return "nol";
+
+  const units = [
+    "",
+    "bir",
+    "ikki",
+    "uch",
+    "to'rt",
+    "besh",
+    "olti",
+    "yetti",
+    "sakkiz",
+    "to'qqiz",
+  ];
+  const tens = [
+    "",
+    "o'n",
+    "yigirma",
+    "o'ttiz",
+    "qirq",
+    "ellik",
+    "oltmish",
+    "yetmish",
+    "sakson",
+    "to'qson",
+  ];
+  const hundreds = [
+    "",
+    "yuz",
+    "ikki yuz",
+    "uch yuz",
+    "to'rt yuz",
+    "besh yuz",
+    "olti yuz",
+    "yetti yuz",
+    "sakkiz yuz",
+    "to'qqiz yuz",
+  ];
+  const thousands = ["", "ming", "million", "milliard", "trillion"];
+
+  // Helper function to convert integers to Uzbek words
+  function integerToWords(number) {
+    let words = [];
+    let scale = 0;
+
+    while (number > 0) {
+      let chunk = number % 1000;
+      if (chunk > 0) {
+        let chunkWords = [];
+        let hundred = Math.floor(chunk / 100);
+        let ten = Math.floor((chunk % 100) / 10);
+        let unit = chunk % 10;
+
+        if (hundred > 0) chunkWords.push(hundreds[hundred]);
+        if (ten > 0) chunkWords.push(tens[ten]);
+        if (unit > 0) chunkWords.push(units[unit]);
+
+        if (scale > 0) chunkWords.push(thousands[scale]);
+        words.unshift(chunkWords.join(" "));
+      }
+      number = Math.floor(number / 1000);
+      scale++;
+    }
+
+    return words.join(" ");
+  }
+
+  // Separate integer and decimal parts
+  const [integerPart, decimalPart] = num.toString().split(".");
+
+  let result = integerToWords(parseInt(integerPart));
+
+  // Process decimal part if it exists
+  if (decimalPart) {
+    result += " butun";
+    const decimalValue = parseInt(decimalPart);
+
+    // Process the decimal digits separately
+    const decimalWords = [];
+    const decimalLength = decimalPart.length;
+
+    for (let i = 0; i < decimalLength; i++) {
+      const digit = parseInt(decimalPart[i]);
+      decimalWords.push(units[digit]);
+    }
+
+    if (decimalLength === 1) {
+      result += ` ${decimalWords.join(" ")} o'n`;
+    } else if (decimalLength === 2) {
+      result += ` ${integerToWords(decimalValue)} yuz`;
+    } else if (decimalLength === 3) {
+      result += ` ${integerToWords(decimalValue)} ming`;
+    } else {
+      result += ` ${integerToWords(decimalValue)}`;
+    }
+  }
+
+  return result;
+};
