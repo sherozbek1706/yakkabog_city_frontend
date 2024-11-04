@@ -83,7 +83,7 @@
 
 .ContractPDF__page {
   width: 100%;
-  height: 1015px;
+  height: 1000px;
   position: relative;
   display: flex;
   /* border: 1px solid red; */
@@ -108,7 +108,8 @@
   font-weight: 500;
   font-size: 16px;
   text-align: center;
-  margin: 20px 0;
+  margin: 20px auto;
+  width: 70%;
 }
 
 .ContractPDF_head {
@@ -132,4 +133,41 @@
 
 .ContractPDF__spacer {
   flex-grow: 1;
+}
+.checking {
+  width: 100%;
+  /* border: 1px solid red; */
+  padding: 5px 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.checking__right {
+  width: 50%;
+  padding: 0px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  /* border: 1px solid red; */
+}
+.checking__left {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 50%;
+  padding: 0px 20px;
+}
+.checking__title {
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+  font-size: 20px;
+}
+.checking__headname {
+  font-size: 16px;
+  margin: 10px 0;
+  font-weight: 600;
 }
