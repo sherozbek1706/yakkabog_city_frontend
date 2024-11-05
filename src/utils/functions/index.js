@@ -165,3 +165,44 @@ export const numberToUzbekWords = (num) => {
 
   return result;
 };
+
+// ********************
+
+export const getMonthName = (date) => {
+  const months = [
+    "Yanvar",
+    "Fevral",
+    "Mart",
+    "Aprel",
+    "May",
+    "Iyun",
+    "Iyul",
+    "Avgust",
+    "Sentyabr",
+    "Oktyabr",
+    "Noyabr",
+    "Dekabr",
+  ];
+
+  // Sana `Date` formatida kelishini ta'minlash
+  const inputDate = new Date(date);
+
+  // Oyni indeksiga qarab nomini olish
+  const monthName = months[inputDate.getMonth()];
+
+  return monthName || "Noto'g'ri sana";
+};
+
+// *******************
+
+export const getYearFromDate = (dateString) => {
+  const date = new Date(dateString);
+  return date.getFullYear();
+};
+
+// ********************
+
+export const getDayFromDate = (dateString) => {
+  const date = new Date(dateString);
+  return date.getDate();
+};
