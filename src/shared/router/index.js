@@ -29,10 +29,10 @@ export const RouterComponent = () => {
           <Route path="/apartment/floor/:id" element={<Floor />} />
           <Route path="/add-apartment" element={<AddApartment />} />
           <Route path="/anketa" element={<Anketa />} />
-          <Route path="/anketa-list" element={<ListAnketa />} />
           <Route path="/contract-add" element={<ContractAdd />} />
           <Route path="/contract-list" element={<ContractList />} />
           <Route path="/contract-get/:id" element={<ContractGet />} />
+          <Route path="/anketa-list" element={<ListAnketa />} />
         </Route>
         <Route path="/model" element={<Model />} />
         <Route path="/get-model" element={<GetModel />} />
