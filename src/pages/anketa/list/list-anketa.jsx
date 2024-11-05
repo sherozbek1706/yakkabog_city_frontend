@@ -26,12 +26,12 @@ export const ListAnketa = () => {
 
   if (error) Errors(error);
 
-  const handleSelect = async (elem) => {
+  const handleSelect =  (elem) => {
     setGetModel(elem);
     navigate("/get-model");
   };
 
-  const handleContract = async (elem) => {
+  const handleContract =  (elem) => {
     setGetModel(elem);
     navigate("/contract-add");
   };

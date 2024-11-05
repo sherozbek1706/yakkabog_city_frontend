@@ -13,7 +13,7 @@ const fetchData = async () => {
 
 export const ContractList = () => {
   const { data, error, isLoading, refetch, isSuccess } = useQuery(
-    "anketa",
+    "contract",
     fetchData
   );
 

@@ -4,6 +4,9 @@ import { MainContext } from "../../../utils/context/context";
 import {
   formatDate,
   formatmoney,
+  getDayFromDate,
+  getMonthName,
+  getYearFromDate,
   numberToUzbekWords,
 } from "../../../utils/functions";
 
@@ -403,9 +406,12 @@ export const ContractPDF = () => {
               Ўзбекистон Республикасининг миллий валютасида сўмда инвестиция
               бадалини киритади. Инвестиция суммаларини ўтказиш (киритиш)
               тўғрисидаги тўлов ҳужжатида “Инвестор” тўлов деталларида
-              қуйидагиларни кўрсатади: “___” _____________2024 йилдаги ________-
-              сонли Шартномага мувофиқ Турар-жой биноси қурилишига инвестиция
-              киритиш бўйича тўлов".
+              қуйидагиларни кўрсатади: “
+              <b>{getDayFromDate(shartnoma?.created_at)}</b>”{" "}
+              <b>{getMonthName(shartnoma?.created_at)} </b>
+              <b>{getYearFromDate(shartnoma?.created_at)}</b> йилдаги{" "}
+              <b>{shartnoma?.id}</b> - сонли Шартномага мувофиқ Турар-жой биноси
+              қурилишига инвестиция киритиш бўйича тўлов".
               <br />
               <br />
               4.4. “Инвестор” томонидан нақд пул кўринишида инвестиция ҳиссаси
