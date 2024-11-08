@@ -23,9 +23,9 @@ export const ContractGet = () => {
     { enabled: !!id } // Only run the query if id exists
   );
 
-  const handleOpen = () => {
+  const handleOpen = (link) => {
     setShartnoma(data?.data?.data);
-    navigate("/pdf-contract");
+    navigate(link);
   };
 
   return (
@@ -35,7 +35,16 @@ export const ContractGet = () => {
         {isLoading ? (
           <h3>Загрузка...</h3>
         ) : (
-          <button onClick={handleOpen}>ЧИТАТЬ PDF-ФАЙЛ</button>
+          <Fragment>
+            <button onClick={() => handleOpen("/pdf-bayonnoma")}>
+              ЧИТАТЬ PDF-ФАЙЛ БАЁННОМА
+            </button>
+            <br />
+            <br />
+            <button onClick={() => handleOpen("/pdf-contract")}>
+              ЧИТАТЬ PDF-ФАЙЛ ДОГОВОРЬ
+            </button>
+          </Fragment>
         )}
       </div>
     </Fragment>

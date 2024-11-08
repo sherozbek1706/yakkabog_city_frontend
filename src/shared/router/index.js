@@ -4,6 +4,7 @@ import {
   AddApartment,
   Admin,
   Anketa,
+  Bayonnoma,
   ContractAdd,
   ContractGet,
   ContractList,
@@ -37,6 +38,7 @@ export const RouterComponent = () => {
         <Route path="/model" element={<Model />} />
         <Route path="/get-model" element={<GetModel />} />
         <Route path="/pdf-contract" element={<ContractPDF />} />
+        <Route path="/pdf-bayonnoma" element={<Bayonnoma />} />
       </Router>
     </Fragment>
   );

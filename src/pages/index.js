@@ -11,3 +11,4 @@ export * from "./contract/add/contract-add";
 export * from "./contract/list/contract-list";
 export * from "./contract/get/contract-get";
 export * from "./contract/pdf/contract-pdf";
+export * from "./contract/bayonnoma/bayonnoma";
