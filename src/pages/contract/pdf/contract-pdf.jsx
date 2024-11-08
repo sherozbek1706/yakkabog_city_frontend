@@ -771,7 +771,13 @@ export const ContractPDF = () => {
                   <b>{shartnoma?.pass_ber_joy}</b> ТИИБ ,
                   <br />
                   <br />
-                  СТИР: __________________
+                  PINFL: <b>{shartnoma?.pinfl}</b>
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  ______________________
                 </p>
               </div>
             </div>
@@ -781,6 +787,7 @@ export const ContractPDF = () => {
             <span className="ContractPDF__spacer"></span> Қурувчи ______________
           </div>
         </div>
+        
       </div>
     </div>
   );
