@@ -1,5 +1,9 @@
 import React, { Fragment } from "react";
 import { Header } from "../../components";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+
 import "./home.css";
 export const Home = () => {
   const slider_data = [
