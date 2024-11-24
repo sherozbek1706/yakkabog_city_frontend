@@ -215,7 +215,6 @@ export const Apartment = () => {
                 <th>SOTILGANMI</th>
                 <th></th>
                 <th></th>
-                {/* <th>SANA</th> */}
               </tr>
             </thead>
             <tbody>
