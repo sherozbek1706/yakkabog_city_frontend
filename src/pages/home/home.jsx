@@ -19,6 +19,10 @@ import image5 from "../../images/slider/5.jpg";
 import image6 from "../../images/slider/6.jpg";
 import image7 from "../../images/slider/7.jpg";
 import image8 from "../../images/slider/8.jpg";
+import image9 from "../../images/slider/9.jpg";
+import image10 from "../../images/slider/10.jpg";
+import image11 from "../../images/slider/11.jpg";
+import image12 from "../../images/slider/12.jpg";
 export const Home = () => {
   const slider_data = [
     {
