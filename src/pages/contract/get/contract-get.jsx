@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 import { getRequest } from "../../../request";
 import { MainContext } from "../../../utils/context/context";
-import { formatmoney } from "../../../utils/functions/index";
+import { formatDate, formatmoney } from "../../../utils/functions/index";
 import { Errors } from "../../../utils/errors";
 import { axiosInstance } from "../../../shared/services";
 import { success_notify } from "../../../shared/notify";
@@ -31,7 +31,7 @@ export const ContractGet = () => {
   const navigate = useNavigate();
   const { id } = useParams();
 
-  const { setShartnoma } = useContext(MainContext);
+  const { setShartnoma, tulovlar } = useContext(MainContext);
 
   const {
     data,
@@ -40,6 +40,8 @@ export const ContractGet = () => {
     refetch,
     isSuccess,
   } = useQuery(["anketa", id], () => fetchData(id), { enabled: !!id });
+
+  console.log(tulovlar);
 
   const mutation = useMutation(payMoney, {
     onSuccess: ({ data }) => {
@@ -83,8 +85,9 @@ export const ContractGet = () => {
           <h3>Загрузка...</h3>
         ) : (
           <Fragment>
-            <div className="w-full flex py-3 items-center justify-start gap-4 flex-wrap">
-              <div className="py-5 px-8 bg-indigo-500 rounded-lg flex justify-between items-center gap-2 shadow-lg">
+            {/* <div className="w-full flex py-3 items-center justify-start gap-4 flex-wrap"> */}
+            <div className="w-full grid grid-cols-4 py-3  gap-4 ">
+              <div className="py-5 px-8 bg-indigo-500 rounded-lg flex justify-start items-center gap-2 shadow-lg">
                 <i className="fa-solid fa-wallet text-white text-4xl"></i>
                 <div className="min-w-52 px-4 border-l">
                   <p className="text-white text-m tracking-tight opacity-95 uppercase">
@@ -95,7 +98,7 @@ export const ContractGet = () => {
                   </p>
                 </div>
               </div>
-              <div className="py-5 px-8 bg-indigo-500 rounded-lg flex justify-between items-center gap-2 shadow-lg">
+              <div className="py-5 px-8 bg-indigo-500 rounded-lg flex justify-start items-center gap-2 shadow-lg">
                 <i className="fa-solid fa-receipt text-white text-4xl"></i>
                 <div className="min-w-52 px-4 border-l">
                   <p className="text-white text-m tracking-tight opacity-95 uppercase">
@@ -106,7 +109,7 @@ export const ContractGet = () => {
                   </p>
                 </div>
               </div>
-              <div className="py-5 px-8 bg-indigo-500 rounded-lg flex justify-between items-center gap-2 shadow-lg">
+              <div className="py-5 px-8 bg-indigo-500 rounded-lg flex justify-start items-center gap-2 shadow-lg">
                 <i className="fa-solid fa-percent text-white text-4xl"></i>
                 <div className="min-w-52 px-4 border-l">
                   <p className="text-white text-m tracking-tight opacity-95 uppercase">
@@ -121,7 +124,7 @@ export const ContractGet = () => {
                   </p>
                 </div>
               </div>
-              <div className="py-5 px-8 bg-indigo-500 rounded-lg flex justify-between items-center gap-2 shadow-lg">
+              <div className="py-5 px-8 bg-indigo-500 rounded-lg flex justify-start items-center gap-2 shadow-lg">
                 <i className="fa-solid fa-money-bill-1-wave text-white text-4xl"></i>
                 <div className="min-w-52 px-4 border-l">
                   <p className="text-white text-m tracking-tight opacity-95 uppercase">
@@ -133,9 +136,49 @@ export const ContractGet = () => {
                 </div>
               </div>
             </div>
-            <div className="border w-full flex items-center justify-center">
-              <div className="w-2/3  px-3 py-5">
-                <DashboardPayments />
+            <div>
+              <h3 className="text-2xl uppercase font-bold text-center tracking-tight my-5">
+                To'lovlar monitoringi - Grafik
+              </h3>
+              <DashboardPayments load={isLoading} />
+            </div>
+            <div className="border w-full flex items-start justify-center">
+              <div className="w-2/3  px-3 py-5 flex flex-col justify-center">
+                <div className="w-full border flex flex-col">
+                  <h3 className="w-full text-2xl uppercase font-bold text-center tracking-tight my-5">
+                    To'lovlar monitoringi
+                  </h3>
+                  <div className="w-full grid grid-cols-3 gap-4 px-8">
+                    {tulovlar
+                      ?.slice()
+                      .reverse()
+                      .map((elem, idx) => (
+                        <div
+                          key={idx}
+                          className="flex flex-col gap-2 p-4 shadow-sm rounded bg-slate-100"
+                        >
+                          <p className="font-bold text-xl text-[#003459]">
+                            <i className="fa-solid fa-hashtag text-xl mr-4 "></i>
+                            {elem?.raqam}
+                            -To'lov
+                          </p>
+                          <p className="font-bold text-xl text-[#2aced0]">
+                            <i className="fa-solid fa-plus text-xl mr-4 "></i>
+                            {formatmoney(elem?.tulov)}
+                          </p>
+                          <p className="font-bold text-xl text-[#ae2012]">
+                            <i className="fa-solid fa-minus text-xl mr-4 "></i>
+                            
+                            {formatmoney(elem?.qolgan_summa)}
+                          </p>
+                          <p className="font-bold text-xl text-[#001219]">
+                            <i className="fa-solid fa-calendar-days text-xl mr-4 "></i>
+                            {formatDate(elem?.sana)}
+                          </p>
+                        </div>
+                      ))}
+                  </div>
+                </div>
               </div>
               <div className="w-1/3 px-3 py-5 flex items-center justify-center">
                 <div className="w-[600px] flex justify-center flex-col rounded-lg py-6 px-12 bg-slate-100">
@@ -175,12 +218,12 @@ export const ContractGet = () => {
                     TASDIQLASH
                   </button>
                 </div>
+                {isLoading && (
+                  <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center z-50">
+                    <img src={loadingGif} className="rounded-lg w-2/6" alt="" />
+                  </div>
+                )}
               </div>
-              {isLoading && (
-                <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center z-50">
-                  <img src={loadingGif} className="rounded-lg w-2/6" alt="" />
-                </div>
-              )}
             </div>
           </Fragment>
         )}
