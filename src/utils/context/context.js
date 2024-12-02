@@ -27,6 +27,8 @@ const MainProvider = ({ children }) => {
 
   const [shartnoma, setShartnoma] = useState(null);
 
+  const [tulovlar, setTulovlar] = useState([]);
+
   return (
     <MainContext.Provider
       value={{
@@ -72,6 +74,8 @@ const MainProvider = ({ children }) => {
         setModal_image,
         shartnoma,
         setShartnoma,
+        tulovlar,
+        setTulovlar,
       }}
     >
       {children}
