@@ -18,6 +18,7 @@ import {
 import { Apartment } from "../../pages/apartment/apartment";
 import { Layout } from "../../components";
 import { Model } from "../../pages/model/model";
+import ContractJadval from "../../pages/contract/jadval/contract-jadval";
 export const RouterComponent = () => {
   return (
     <Fragment>
@@ -39,6 +40,7 @@ export const RouterComponent = () => {
         <Route path="/get-model" element={<GetModel />} />
         <Route path="/pdf-contract" element={<ContractPDF />} />
         <Route path="/pdf-bayonnoma" element={<Bayonnoma />} />
+        <Route path="/pdf-jadval" element={<ContractJadval />} />
       </Router>
     </Fragment>
   );

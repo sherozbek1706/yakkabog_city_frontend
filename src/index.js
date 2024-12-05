@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import { QueryClient, QueryClientProvider } from "react-query";
 import "./index.css";
+import '../src/assets/icons/css/all.css';
 
 const queryClient = new QueryClient();
 
@@ -12,7 +13,6 @@ root.render(
   <QueryClientProvider client={queryClient}>
     <BrowserRouter>
       <App />
-      
     </BrowserRouter>
   </QueryClientProvider>
 );

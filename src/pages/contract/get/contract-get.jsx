@@ -44,6 +44,11 @@ export const ContractGet = () => {
             <button onClick={() => handleOpen("/pdf-contract")}>
               ЧИТАТЬ PDF-ФАЙЛ ДОГОВОРЬ
             </button>
+            <br />
+            <br />
+            <button onClick={() => handleOpen("/pdf-jadval")}>
+              ЧИТАТЬ PDF-ФАЙЛ "Инвестиция ЖАДВАЛИ"
+            </button>
           </Fragment>
         )}
       </div>

@@ -206,3 +206,23 @@ export const getDayFromDate = (dateString) => {
   const date = new Date(dateString);
   return date.getDate();
 };
+
+// *********************
+
+export const getMonthlyDatesWithAmounts = (startDate, monthsCount, amount) => {
+  const datesWithAmounts = [];
+  const start = new Date(startDate);
+
+  for (let i = 1; i <= monthsCount; i++) {
+    const date = new Date(start);
+    date.setMonth(start.getMonth() + (i - 1));
+
+    datesWithAmounts.push({
+      monthNumber: i,
+      date: date.toISOString(),
+      amount: amount,
+    });
+  }
+
+  return datesWithAmounts;
+};

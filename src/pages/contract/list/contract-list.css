@@ -6,6 +6,7 @@
   width: 100%;
   display: flex;
   padding: 20px 0;
+  flex-wrap: wrap;
 }
 .ContractListBoxes__box {
   width: 320px;
