@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import "./contract-list.css";
-import { Header } from "../../../components";
+import { Header, NotFound } from "../../../components";
 import { getRequest } from "../../../request";
 import { useQuery } from "react-query";
 import { Errors } from "../../../utils/errors";
@@ -29,46 +29,50 @@ export const ContractList = () => {
             <h3>Загрузка...</h3>
           ) : (
             <Fragment>
-              {data?.data?.data?.result?.map((elem) => (
-                <div className="ContractListBoxes__box">
-                  <div className="ContractListTitle">
-                    <i className="fa-solid fa-file-invoice icon"></i>
-                    <p>{elem?.id} - shartnoma</p>
+              {data?.data?.data?.count === 0 ? (
+                <NotFound msg={"SHARTNOMALAR TOPILMADI"} />
+              ) : (
+                data?.data?.data?.result?.map((elem) => (
+                  <div className="ContractListBoxes__box">
+                    <div className="ContractListTitle">
+                      <i className="fa-solid fa-file-invoice icon"></i>
+                      <p>{elem?.id} - shartnoma</p>
+                    </div>
+                    <div className="ContractListInfo">
+                      <div className="Infos">
+                        <i className="fa-solid fa-diamond icon"></i>
+                        <p>{elem?.fullName}</p>
+                      </div>
+                      <div className="Infos">
+                        <i className="fa-solid fa-diamond icon"></i>
+                        <p>
+                          {elem?.number_of_rooms} Xonalik | {elem?.field} m
+                          <sup>2</sup>
+                        </p>
+                      </div>
+                      <div className="Infos">
+                        <i className="fa-solid fa-diamond icon"></i>
+                        <p>
+                          {elem?.floor}-Etaj | {elem?.apartment_number}-Xonadon
+                        </p>
+                      </div>
+                      <div className="Infos">
+                        <i className="fa-solid fa-diamond icon"></i>
+                        <p>{elem?.phone_number1}</p>
+                      </div>
+                      <div className="Infos">
+                        <i className="fa-solid fa-diamond icon"></i>
+                        <p>{elem?.phone_number2}</p>
+                      </div>
+                    </div>
+                    <Link to={`/contract-get/` + elem?.id}>
+                      <button className="ContractListBoxes__box__btn">
+                        KIRISH
+                      </button>
+                    </Link>
                   </div>
-                  <div className="ContractListInfo">
-                    <div className="Infos">
-                      <i class="fa-solid fa-diamond icon"></i>
-                      <p>{elem?.fullName}</p>
-                    </div>
-                    <div className="Infos">
-                      <i class="fa-solid fa-diamond icon"></i>
-                      <p>
-                        {elem?.number_of_rooms} Xonalik | {elem?.field} m
-                        <sup>2</sup>
-                      </p>
-                    </div>
-                    <div className="Infos">
-                      <i class="fa-solid fa-diamond icon"></i>
-                      <p>
-                        {elem?.floor}-Etaj | {elem?.apartment_number}-Xonadon
-                      </p>
-                    </div>
-                    <div className="Infos">
-                      <i class="fa-solid fa-diamond icon"></i>
-                      <p>{elem?.phone_number1}</p>
-                    </div>
-                    <div className="Infos">
-                      <i class="fa-solid fa-diamond icon"></i>
-                      <p>{elem?.phone_number2}</p>
-                    </div>
-                  </div>
-                  <Link to={`/contract-get/` + elem?.id}>
-                    <button className="ContractListBoxes__box__btn">
-                      KIRISH
-                    </button>
-                  </Link>
-                </div>
-              ))}
+                ))
+              )}
             </Fragment>
           )}
         </div>
