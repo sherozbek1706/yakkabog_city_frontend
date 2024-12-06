@@ -65,7 +65,7 @@ export const Sidebar = () => {
                 isActive ? "SidebarNav__link" : null
               }
             >
-              <i class="fa-solid fa-list icon"></i>
+              <i className="fa-solid fa-list icon"></i>
               <p>Anketalar</p>
             </NavLink>
             {contractData ? (
@@ -108,7 +108,7 @@ export const Sidebar = () => {
                 isActive ? "SidebarNav__link" : null
               }
             >
-              <i class="fa-solid fa-house-medical icon"></i>
+              <i className="fa-solid fa-house-medical icon"></i>
               <p>Xona qo'shish</p>
             </NavLink>
 

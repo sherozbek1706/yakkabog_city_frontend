@@ -29,7 +29,7 @@ export const Floor = () => {
       <div className="Floor">
         <div className="Floor_box top">
           <i
-            class="fa-regular fa-image icon"
+            className="fa-regular fa-image icon"
             onClick={() => {
               handle(ikkiXonalik1);
             }}
@@ -37,7 +37,7 @@ export const Floor = () => {
         </div>
         <div className="Floor_box top">
           <i
-            class="fa-regular fa-image icon"
+            className="fa-regular fa-image icon"
             onClick={() => {
               handle(ikkiXonalik2);
             }}
@@ -45,7 +45,7 @@ export const Floor = () => {
         </div>
         <div className="Floor_box top">
           <i
-            class="fa-regular fa-image icon"
+            className="fa-regular fa-image icon"
             onClick={() => {
               handle(ikkiXonalik2);
             }}
@@ -53,7 +53,7 @@ export const Floor = () => {
         </div>
         <div className="Floor_box top">
           <i
-            class="fa-regular fa-image icon"
+            className="fa-regular fa-image icon"
             onClick={() => {
               handle(ikkiXonalik1);
             }}
@@ -61,7 +61,7 @@ export const Floor = () => {
         </div>
         <div className="Floor_box top">
           <i
-            class="fa-regular fa-image icon"
+            className="fa-regular fa-image icon"
             onClick={() => {
               handle(birXonalik);
             }}
@@ -69,7 +69,7 @@ export const Floor = () => {
         </div>
         <div className="Floor_box top">
           <i
-            class="fa-regular fa-image icon"
+            className="fa-regular fa-image icon"
             onClick={() => {
               handle(uchXonalik1);
             }}
@@ -77,7 +77,7 @@ export const Floor = () => {
         </div>
         <div className="Floor_box bottom">
           <i
-            class="fa-regular fa-image icon"
+            className="fa-regular fa-image icon"
             onClick={() => {
               handle(birXonalik);
             }}
@@ -85,7 +85,7 @@ export const Floor = () => {
         </div>
         <div className="Floor_box bottom">
           <i
-            class="fa-regular fa-image icon"
+            className="fa-regular fa-image icon"
             onClick={() => {
               handle(ikkiXonalik3);
             }}
@@ -93,7 +93,7 @@ export const Floor = () => {
         </div>
         <div className="Floor_box bottom">
           <i
-            class="fa-regular fa-image icon"
+            className="fa-regular fa-image icon"
             onClick={() => {
               handle(ikkiXonalik3);
             }}
@@ -101,7 +101,7 @@ export const Floor = () => {
         </div>
         <div className="Floor_box bottom">
           <i
-            class="fa-regular fa-image icon"
+            className="fa-regular fa-image icon"
             onClick={() => {
               handle(birXonalik);
             }}
@@ -109,7 +109,7 @@ export const Floor = () => {
         </div>
         <div className="Floor_box bottom">
           <i
-            class="fa-regular fa-image icon"
+            className="fa-regular fa-image icon"
             onClick={() => {
               handle(birXonalik);
             }}
@@ -117,7 +117,7 @@ export const Floor = () => {
         </div>
         <div className="Floor_box bottom">
           <i
-            class="fa-regular fa-image icon"
+            className="fa-regular fa-image icon"
             onClick={() => {
               handle(uchXonalik2);
             }}
