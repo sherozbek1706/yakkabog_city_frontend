@@ -1,42 +1,89 @@
-import React, { Fragment, useContext } from "react";
-import "./contract-get.css";
-import { Header } from "../../../components";
+import React, { Fragment, useContext, useState } from "react";
+import { DashboardPayments, Header } from "../../../components";
 import { useNavigate, useParams } from "react-router-dom";
-import { useQuery } from "react-query";
+import { useMutation, useQuery, useQueryClient } from "react-query";
 import { getRequest } from "../../../request";
 import { MainContext } from "../../../utils/context/context";
 import { formatmoney } from "../../../utils/functions/index";
+import { Errors } from "../../../utils/errors";
+import { axiosInstance } from "../../../shared/services";
+import { success_notify } from "../../../shared/notify";
+import "./contract-get.css";
+import loadingGif from "../../../images/main/loading_payment.gif";
+
 const fetchData = async (id) => {
   const data = await getRequest("contract/get/" + id);
   return data;
 };
 
+const payMoney = async (newData) => {
+  let data = await axiosInstance.post("contract/pay", newData);
+  return data;
+};
+
 export const ContractGet = () => {
+  const [tulov, setTulov] = useState(0);
+  const [isChecked, setIsChecked] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); // Yangi loading holati
+
+  const queryClient = useQueryClient();
+
   const navigate = useNavigate();
   const { id } = useParams();
 
   const { setShartnoma } = useContext(MainContext);
 
-  const { data, error, isLoading, refetch, isSuccess } = useQuery(
-    ["anketa", id], // Unique query key including the ID
-    () => fetchData(id), // Use a callback to pass the id
-    { enabled: !!id } // Only run the query if id exists
-  );
+  const {
+    data,
+    error,
+    isLoading: isFetching,
+    refetch,
+    isSuccess,
+  } = useQuery(["anketa", id], () => fetchData(id), { enabled: !!id });
+
+  const mutation = useMutation(payMoney, {
+    onSuccess: ({ data }) => {
+      queryClient.invalidateQueries("data");
+      success_notify("To'lov muvaffaqiyatli amalga oshirildi!");
+
+      setTulov(0);
+      setIsChecked(false);
+
+      setTimeout(() => {
+        setIsLoading(false);
+        refetch(); // Loading ni to'xtatish
+      }, 7000);
+    },
+    onError: (error) => {
+      Errors(error);
+      setIsLoading(false);
+    },
+  });
+
+  const handleSubmit = async () => {
+    setIsLoading(true); // Loadingni boshlash
+    mutation.mutate({
+      pay: +tulov,
+      contract_id: data?.data?.data?.id,
+    });
+  };
 
   const handleOpen = (link) => {
     setShartnoma(data?.data?.data);
     navigate(link);
   };
 
+  const isButtonEnabled = isChecked && tulov > 0;
+
   return (
     <Fragment>
       <Header title={"Shartnoma " + id} />
-      <div className="ContractGet border">
-        {isLoading ? (
+      <div className="ContractGet">
+        {isFetching ? (
           <h3>Загрузка...</h3>
         ) : (
           <Fragment>
-            <div className="w-full flex py-3 items-center justify-start gap-4">
+            <div className="w-full flex py-3 items-center justify-start gap-4 flex-wrap">
               <div className="py-5 px-8 bg-indigo-500 rounded-lg flex justify-between items-center gap-2 shadow-lg">
                 <i className="fa-solid fa-wallet text-white text-4xl"></i>
                 <div className="min-w-52 px-4 border-l">
@@ -85,6 +132,55 @@ export const ContractGet = () => {
                   </p>
                 </div>
               </div>
+            </div>
+            <div className="border w-full flex items-center justify-center">
+              <div className="w-2/3  px-3 py-5">
+                <DashboardPayments />
+              </div>
+              <div className="w-1/3 px-3 py-5 flex items-center justify-center">
+                <div className="w-[600px] flex justify-center flex-col rounded-lg py-6 px-12 bg-slate-100">
+                  <p className="text-2xl font-bold uppercase tracking-tight w-full text-center my-2 mb-10">
+                    To'lov qabul qilish
+                  </p>
+                  <p className="text-sm opacity-65">
+                    Kiritildi: {formatmoney(+tulov)} so'm
+                  </p>
+                  <input
+                    type="number"
+                    className="mt-4 h-10 border rounded-lg  px-3 tracking-tight outline-none"
+                    placeholder="To'lovni kirting..."
+                    value={tulov}
+                    onChange={(e) => setTulov(e.target.value)}
+                  />
+                  <div className="flex items-center space-x-2 my-1">
+                    <input
+                      type="checkbox"
+                      className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
+                      checked={isChecked}
+                      onChange={(e) => setIsChecked(e.target.checked)}
+                    />
+                    <p className="text-sm text-gray-700">
+                      Tasdiqlayman, ma'lumotlar hammasi to'g'ri!
+                    </p>
+                  </div>
+                  <button
+                    disabled={!isButtonEnabled} // Checkbox belgilanmasa yoki summa 0 bo'lsa tugma faol emas
+                    className={`border my-4 h-12 rounded-lg font-semibold tracking-tight ${
+                      isButtonEnabled
+                        ? "bg-indigo-500 text-white hover:opacity-100 ease-in-out cursor-pointer"
+                        : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                    }`}
+                    onClick={handleSubmit}
+                  >
+                    TASDIQLASH
+                  </button>
+                </div>
+              </div>
+              {isLoading && (
+                <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center z-50">
+                  <img src={loadingGif} className="rounded-lg w-2/6" alt="" />
+                </div>
+              )}
             </div>
           </Fragment>
         )}
