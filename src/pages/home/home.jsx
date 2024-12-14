@@ -53,6 +53,10 @@ export const Home = () => {
       title: "BARCHA QULAYLIKLAR",
     },
     {
+      url: image7,
+      title: "TO'LIQ TAMIRLANGAN UYLAR.",
+    },
+    {
       url: image14,
       title: "YAKKABOG' CITY",
     },
