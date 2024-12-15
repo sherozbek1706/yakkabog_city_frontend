@@ -49,6 +49,10 @@ export const Home = () => {
       title: "ZAMONAVIY UYLAR",
     },
     {
+      url: image6,
+      title: "BARCHA QULAYLIKLAR",
+    },
+    {
       url: image14,
       title: "YAKKABOG' CITY",
     },
