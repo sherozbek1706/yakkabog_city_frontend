@@ -57,6 +57,10 @@ export const Home = () => {
       title: "TO'LIQ TAMIRLANGAN UYLAR.",
     },
     {
+      url: image8,
+      title: "YAKKABOG' CITY",
+    },
+    {
       url: image14,
       title: "YAKKABOG' CITY",
     },
