@@ -89,6 +89,8 @@ export const Home = () => {
   return (
     <Fragment>
       <Header title={"ASOSIY SAHIFA"} />
+      <div className="w-full p-10">
+      </div>
     </Fragment>
   );
 };
