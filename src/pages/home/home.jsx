@@ -90,6 +90,9 @@ export const Home = () => {
     <Fragment>
       <Header title={"ASOSIY SAHIFA"} />
       <div className="w-full p-10">
+        <Swiper
+        >
+        </Swiper>
       </div>
     </Fragment>
   );
