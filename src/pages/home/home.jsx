@@ -91,6 +91,9 @@ export const Home = () => {
       <Header title={"ASOSIY SAHIFA"} />
       <div className="w-full p-10">
         <Swiper
+          modules={[Autoplay, Navigation, Pagination]}
+          spaceBetween={30}
+          slidesPerView={2}
         >
         </Swiper>
       </div>
