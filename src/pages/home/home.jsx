@@ -94,6 +94,7 @@ export const Home = () => {
           modules={[Autoplay, Navigation, Pagination]}
           spaceBetween={30}
           slidesPerView={2}
+          loop={true}
         >
         </Swiper>
       </div>
