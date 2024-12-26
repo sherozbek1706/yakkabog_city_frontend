@@ -95,6 +95,10 @@ export const Home = () => {
           spaceBetween={30}
           slidesPerView={2}
           loop={true}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
         >
         </Swiper>
       </div>
