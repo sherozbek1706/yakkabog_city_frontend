@@ -99,6 +99,8 @@ export const Home = () => {
             delay: 5000,
             disableOnInteraction: false,
           }}
+          pagination={{ clickable: true }}
+          className="px-16 w-full my-6"
         >
         </Swiper>
       </div>
