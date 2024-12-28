@@ -100,6 +100,7 @@ export const Home = () => {
             disableOnInteraction: false,
           }}
           pagination={{ clickable: true }}
+          navigation
           className="px-16 w-full my-6"
         >
         </Swiper>
