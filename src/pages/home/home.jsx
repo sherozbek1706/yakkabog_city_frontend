@@ -103,6 +103,8 @@ export const Home = () => {
           navigation
           className="px-16 w-full my-6"
         >
+          {slider_data.map((elem, idx) => (
+          ))}
         </Swiper>
       </div>
     </Fragment>
