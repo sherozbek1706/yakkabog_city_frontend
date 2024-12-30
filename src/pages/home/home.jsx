@@ -104,6 +104,8 @@ export const Home = () => {
           className="px-16 w-full my-6"
         >
           {slider_data.map((elem, idx) => (
+            <SwiperSlide key={idx}>
+            </SwiperSlide>
           ))}
         </Swiper>
       </div>
