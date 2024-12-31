@@ -105,6 +105,11 @@ export const Home = () => {
         >
           {slider_data.map((elem, idx) => (
             <SwiperSlide key={idx}>
+                <img
+                  src={elem.url}
+                  className="w-full h-full object-cover"
+                  alt=""
+                />
             </SwiperSlide>
           ))}
         </Swiper>
