@@ -110,6 +110,7 @@ export const Home = () => {
                   className="w-full h-full object-cover"
                   alt=""
                 />
+                  {elem.title}
             </SwiperSlide>
           ))}
         </Swiper>
