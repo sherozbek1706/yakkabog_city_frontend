@@ -110,6 +110,10 @@ export const Home = () => {
                   className="w-full h-full object-cover"
                   alt=""
                 />
+                  style={{
+                    background:
+                      "linear-gradient(to top, #000, #222, #ffffff00, #ffffff00, #ffffff00, #ffffff00, #ffffff00)",
+                  }}
                   {elem.title}
             </SwiperSlide>
           ))}
