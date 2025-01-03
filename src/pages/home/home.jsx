@@ -105,16 +105,23 @@ export const Home = () => {
         >
           {slider_data.map((elem, idx) => (
             <SwiperSlide key={idx}>
+              <div className="relative w-full h-[620px]">
                 <img
                   src={elem.url}
                   className="w-full h-full object-cover"
                   alt=""
                 />
+
+                <div
+                  className="absolute top-0 left-0 w-full h-full bg-red-500 bg-opacity-50 text-white flex items-end justify-start py-8 px-8 text-3xl"
                   style={{
                     background:
                       "linear-gradient(to top, #000, #222, #ffffff00, #ffffff00, #ffffff00, #ffffff00, #ffffff00)",
                   }}
+                >
                   {elem.title}
+                </div>
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>
