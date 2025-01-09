@@ -26,12 +26,14 @@ export const ListAnketa = () => {
 
   if (error) Errors(error);
 
-  const handleSelect =  (elem) => {
+  const handleSelect = (elem) => {
     setGetModel(elem);
     navigate("/get-model");
   };
 
-  const handleContract =  (elem) => {
+  const handleContract = (elem) => {
+    console.log(elem);
+
     setGetModel(elem);
     navigate("/contract-add");
   };
@@ -75,7 +77,10 @@ export const ListAnketa = () => {
                 <th></th>
                 <th>To'liq ism</th>
                 <th>Sana</th>
-                <th>Telefon raqam <br />Номер телефона</th>
+                <th>
+                  Telefon raqam <br />
+                  Номер телефона
+                </th>
                 <th>Qo'sh/ Telefon raqam</th>
                 <th>To'lov</th>
                 <th>
@@ -189,9 +194,7 @@ export const ListAnketa = () => {
                               <div className="table_icon">
                                 <i
                                   className="fa-solid fa-address-card icon"
-                                  onClick={() =>
-                                    handleContract(group.clients[0])
-                                  }
+                                  onClick={() => handleContract(elem)}
                                 ></i>
                               </div>
                             </td>

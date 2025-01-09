@@ -787,7 +787,6 @@ export const ContractPDF = () => {
             <span className="ContractPDF__spacer"></span> Қурувчи ______________
           </div>
         </div>
-        
       </div>
     </div>
   );

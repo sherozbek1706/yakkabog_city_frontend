@@ -247,46 +247,6 @@ export const Anketa = () => {
           : qolgan_tulov_aniq / +muddatli_tulov_oyi,
     });
 
-    //   let ApiModel = {
-    //     full_name,
-    //     phone_number1,
-    //     phone_number2,
-    //     order_payment,
-    //     muddatli_tulov_oyi: +muddatli_tulov_oyi,
-    //     block_number: contractData?.block_number,
-    //     entrance: contractData?.entrance,
-    //     floor: contractData?.floor,
-    //     apartment_number: contractData?.apartment_number,
-    //     field: contractData?.field,
-    //     number_of_rooms: contractData?.number_of_rooms,
-    //     price_per_square_meter: contractData?.metr_kvadrat_summasi,
-    //     total_price: contractData?.field * contractData?.metr_kvadrat_summasi,
-    //     initial_payment_amount: boshlangich_tulov_bormi
-    //       ? boshlangich_pul
-    //       : contractData?.boshlangich_summasi,
-    //     initial_payment_amount_percent: contractData?.rassrochkaFoiz,
-    //     qolgan_summa:
-    //       order_payment === "ipoteka"
-    //         ? ipotekaSummaMinus(qolgansumma).qolgan_summa
-    //         : qolgansumma,
-    //     ipoteka_tulovi:
-    //       order_payment === "ipoteka"
-    //         ? ipotekaSummaMinus(qolgansumma).ipoteka
-    //         : null,
-    //     ipotekadan_qolgan_tulov:
-    //       order_payment === "ipoteka"
-    //         ? ipotekaSummaMinus(qolgansumma).qolgan_summa
-    //         : null,
-    //     rassrochka:
-    //       order_payment === "ipoteka"
-    //         ? ipotekaSummaMinus(qolgansumma).qolgan_summa / 12
-    //         : qolgansumma / +muddatli_tulov_oyi,
-    //     aksiya: contractData?.aksiya,
-    //   };
-
-    //   mutation1.mutate(ApiModel);
-    // };
-
     let ApiModel = {
       full_name,
       phone_number1,
@@ -377,17 +337,6 @@ export const Anketa = () => {
                     label={"Qo'shimcha telefon raqam"}
                     type={"text"}
                   />
-                  {/* <div className="AnketaFormSelect">
-                    <p>Anketa beruvchi inson</p>
-                    <select
-                      onChange={(e) => setRole(e.target.value)}
-                      value={role}
-                    >
-                      <option value={null}>Tanlang</option>
-                      <option value="mexmon">Mexmon</option>
-                      <option value="xaridor">Xaridor</option>
-                    </select>
-                  </div> */}
 
                   <div className="AnketaFormSelect">
                     <p>To'lov qancha oyga</p>
@@ -457,29 +406,6 @@ export const Anketa = () => {
                         : contractData?.umumiy_summasi
                     )}
                   />
-                  {/* 
-                    umumiy summani topish
-
-                    (
-                      boshqa_kv_metr_pul_bormi
-                        ? boshqa_kv_metr_pul * contractData?.field
-                        : contractData?.umumiy_summasi
-                    )
-
-                  */}
-
-                  {/* 
-                    qolgan summani topish
-
-                    ((
-                      boshqa_kv_metr_pul_bormi
-                        ? boshqa_kv_metr_pul * contractData?.field
-                        : contractData?.umumiy_summasi
-                    ) - (boshlangich_tulov_bormi
-        ? boshlangich_pul
-        : contractData?.boshlangich_summasi))
-
-                  */}
 
                   <FormikInput
                     fieldClass="FormInputField"
@@ -607,38 +533,6 @@ export const Anketa = () => {
                   ) : null}
                 </div>
                 <div className="AnketaFormClaster">
-                  <Fragment>
-                    {/* 1 */}
-
-                    {/* <div className="FormInputField">
-                    <label>Muddatli to'lov qancha oyga</label>
-                    <input
-                      type="number"
-                      placeholder="Muddatli to'lov qancha oyga"
-                      onChange={(e) => setMuddatli_tulov_oyi(e.target.value)}
-                    />
-                  </div> */}
-                    {/* <FormikInput
-                    fieldClass={"FormInputField"}
-                    id={"passport_series"}
-                    label={"Passport seriya raqami"}
-                    type={"text"}
-                  /> */}
-                    {/* <FormikInput
-                    fieldClass={"FormInputField"}
-                    id={"PINFL"}
-                    label={"PINFL kiriting"}
-                    type={"number"}
-                  /> */}
-                    {/* <FormikInput
-                    fieldClass="FormInputField"
-                    id="none"
-                    type="text"
-                    label="Xonadon ID raqami"
-                    disable={true}
-                    value={contractData?.id}
-                  /> */}
-                  </Fragment>
                   <FormikInput
                     fieldClass="FormInputField"
                     id="none"
@@ -657,25 +551,6 @@ export const Anketa = () => {
                     disable={true}
                     value={formatmoney(contractData?.chegirma)}
                   />
-
-                  {/* <div className="AnketaFormSelect">
-                    <p>Qay to'lashni maqul ko'rasiz</p>
-                    <select
-                      onChange={(e) => setPayment_method(e.target.value)}
-                      value={payment_method ? payment_method : null}
-                    >
-                      <option value={null}>Tanlang</option>
-                      <option value="pul">Naqd usulda</option>
-                      <option value="karta">Karta yordamida</option>
-                      <option value="perevod">Perevod orqali</option>
-                    </select>
-                  </div> */}
-                  {/* <FormikInput
-                    fieldClass={"FormInputField"}
-                    id={"percent_aksiya"}
-                    label={"Aksiyani kiriting"}
-                    type={"number"}
-                  /> */}
                 </div>
 
                 <div className="AnketaBtns">

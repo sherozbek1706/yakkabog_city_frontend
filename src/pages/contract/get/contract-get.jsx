@@ -79,13 +79,16 @@ export const ContractGet = () => {
 
   return (
     <Fragment>
-      <Header title={"Shartnoma " + id} />
+      <Header
+        title={
+          "Shartnoma " + id + " | " + " " + data?.data?.data?.fullName || " "
+        }
+      />
       <div className="ContractGet">
         {isFetching ? (
           <h3>Загрузка...</h3>
         ) : (
           <Fragment>
-            {/* <div className="w-full flex py-3 items-center justify-start gap-4 flex-wrap"> */}
             <div className="w-full grid grid-cols-4 py-3  gap-4 ">
               <div className="py-5 px-8 bg-indigo-500 rounded-lg flex justify-start items-center gap-2 shadow-lg">
                 <i className="fa-solid fa-wallet text-white text-4xl"></i>
@@ -142,9 +145,9 @@ export const ContractGet = () => {
               </h3>
               <DashboardPayments load={isLoading} />
             </div>
-            <div className="border w-full flex items-start justify-center">
+            <div className=" w-full flex items-start justify-center">
               <div className="w-2/3  px-3 py-5 flex flex-col justify-center">
-                <div className="w-full border flex flex-col">
+                <div className="w-full  flex flex-col">
                   <h3 className="w-full text-2xl uppercase font-bold text-center tracking-tight my-5">
                     To'lovlar monitoringi
                   </h3>
@@ -164,12 +167,11 @@ export const ContractGet = () => {
                           </p>
                           <p className="font-bold text-xl text-[#2aced0]">
                             <i className="fa-solid fa-plus text-xl mr-4 "></i>
-                            {formatmoney(elem?.tulov)}
+                            {formatmoney(elem?.tulov)} so'm
                           </p>
                           <p className="font-bold text-xl text-[#ae2012]">
                             <i className="fa-solid fa-minus text-xl mr-4 "></i>
-                            
-                            {formatmoney(elem?.qolgan_summa)}
+                            {formatmoney(elem?.qolgan_summa)} so'm
                           </p>
                           <p className="font-bold text-xl text-[#001219]">
                             <i className="fa-solid fa-calendar-days text-xl mr-4 "></i>
@@ -180,8 +182,11 @@ export const ContractGet = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-1/3 px-3 py-5 flex items-center justify-center">
-                <div className="w-[600px] flex justify-center flex-col rounded-lg py-6 px-12 bg-slate-100">
+              <div className="w-1/3 px-3 py-5 flex flex-col items-center justify-center">
+                <div
+                  className="w-full flex justify-center flex-col rounded-lg
+                 py-6 px-12 bg-slate-100"
+                >
                   <p className="text-2xl font-bold uppercase tracking-tight w-full text-center my-2 mb-10">
                     To'lov qabul qilish
                   </p>
@@ -216,6 +221,30 @@ export const ContractGet = () => {
                     onClick={handleSubmit}
                   >
                     TASDIQLASH
+                  </button>
+                </div>
+
+                <div className="w-full flex flex-col gap-4 py-4">
+                  <button
+                    className="w-full border h-12 uppercase tracking-tight font-semibold rounded bg-green-200 shadow-sm"
+                    onClick={() => handleOpen("/pdf-bayonnoma")}
+                  >
+                    <i className="fa-solid fa-bookmark text-xl mr-2"></i>{" "}
+                    Bayonnoma
+                  </button>
+                  <button
+                    className="w-full border h-12 uppercase tracking-tight font-semibold rounded bg-green-200 shadow-sm"
+                    onClick={() => handleOpen("/pdf-contract")}
+                  >
+                    <i className="fa-solid fa-file-invoice text-xl mr-2"></i>{" "}
+                    Shartnoma
+                  </button>
+                  <button
+                    className="w-full border h-12 uppercase tracking-tight font-semibold rounded bg-green-200 shadow-sm"
+                    onClick={() => handleOpen("/pdf-jadval")}
+                  >
+                    <i className="fa-solid fa-table-list text-xl mr-2"></i>{" "}
+                    Jadval
                   </button>
                 </div>
                 {isLoading && (

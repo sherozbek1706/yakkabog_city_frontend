@@ -451,6 +451,11 @@ const ContractJadval = () => {
                 </tr>
               </tbody>
             </table>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
             <div className="checking">
               <div className="checking__left">
                 <h4 className="checking__title">ҚУРУВЧИ</h4>

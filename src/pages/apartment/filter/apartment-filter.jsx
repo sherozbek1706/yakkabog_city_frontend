@@ -73,22 +73,6 @@ export const ApartmentFilter = () => {
               <option value={"false"}>Sotilmagan</option>
             </select>
           </div>
-          {/* <div className="ApartmentFilterSelect__one">
-            <p>Kvartira raqami bo'yicha sortlash</p>
-            <select onChange={handleSortChange}>
-              <option value={null}>Tanlang</option>
-              <option value="asc">Pastdan tepaga</option>
-              <option value="desc">Tepadan pastga</option>
-            </select>
-          </div> */}
-          {/* <div className="ApartmentFilterSelect__one">
-            <p>Kvartira narxi bo'yicha sortlash</p>
-            <select onChange={handleTotalPriceChange}>
-              <option value={null}>Tanlang</option>
-              <option value="asc">Pastdan tepaga</option>
-              <option value="desc">Tepadan pastga</option>
-            </select>
-          </div> */}
           <div className="ApartmentFilterSelect__one">
             <p>Rassrochkaga boshlang'ich foiz</p>
             <select
@@ -102,25 +86,7 @@ export const ApartmentFilter = () => {
               <option value={"0.5&600000"}>Boshlang'ich 50 foiz to'lov</option>
             </select>
           </div>
-          {/* <div className="ApartmentFilterSelect__one">
-            <p>Pul bilan foiz chiqarish</p>
-            <input
-              className="checkbox__input"
-              checked={toSum}
-              type="checkbox"
-              onChange={(e) => setToSum(e.target.checked)}
-            />
-          </div> */}
-          {/* <div className="ApartmentFilterSearch__input">
-            <p>Boshlangich to'lov miqdori</p>
-            <input
-              disabled={!toSum}
-              type="number"
-              placeholder="Boshlang'ich summani kiriting"
-              value={boshlangich_tulow}
-              onChange={(e) => setBoshlangich_tulow(e.target.value)}
-            />
-          </div> */}
+
           <div className="ApartmentFilterSelect__one">
             <p>Aksiyadan Foydalanish</p>
             <input
