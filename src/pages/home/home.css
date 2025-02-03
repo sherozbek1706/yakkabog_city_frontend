@@ -1,0 +1,14 @@
+.MainContent {
+  width: calc(100% - 300px);
+  min-height: 100vh;
+  margin-left: 300px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: 0.4s ease-in-out;
+}
+.MainContent.active {
+  width: 100%;
+  margin: 0;
+}

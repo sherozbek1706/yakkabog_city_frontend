@@ -1,0 +1,209 @@
+/* .ContractPDF {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ContractPDF__list {
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+.ContractPDF__page {
+  width: 100%;
+  height: 1015px;
+}
+.ContractPDF__header {
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+} */
+
+/* .ContractPDF {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ContractPDF__list {
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.ContractPDF__page {
+  width: 100%;
+  height: 1015px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ContractPDF__header {
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+}
+
+.ContractPDF__footer {
+  font-size: 14px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.ContractPDF__spacer {
+  flex-grow: 1;
+} */
+
+.ContractPDF {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ContractPDF__list {
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.ContractPDF__page {
+  width: 100%;
+  height: 1000px;
+  position: relative;
+  display: flex;
+  /* border: 1px solid red; */
+  flex-direction: column;
+  justify-content: space-between;
+}
+.page_num {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  opacity: 0.5;
+}
+.ContractPDF__header {
+  font-weight: 600;
+  font-size: 13px;
+  text-align: center;
+}
+
+.ContractPDF__title {
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+  margin: 20px auto;
+  width: 70%;
+}
+
+.ContractPDF_head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.ContractPDF__desc {
+  font-weight: 300;
+  font-size: 13px;
+  text-align: justify;
+}
+.ContractPDF__footer {
+  font-size: 14px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.ContractPDF__spacer {
+  flex-grow: 1;
+}
+.checking {
+  width: 100%;
+  /* border: 1px solid red; */
+  padding: 5px 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.checking__right {
+  width: 50%;
+  padding: 0px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  /* border: 1px solid red; */
+}
+.checking__left {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 50%;
+  padding: 0px 20px;
+}
+.checking__title {
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+  font-size: 20px;
+}
+.checking__headname {
+  font-size: 16px;
+  margin: 10px 0;
+  font-weight: 600;
+}
+.ContractPDF__desc.right {
+  text-align: right;
+}
+.ContractPDF__desc.center {
+  text-align: center;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.Contract__table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.Contract__table tr th {
+  font-weight: 500;
+  color: #000;
+  border: 1px solid #000;
+  text-align: center;
+  padding: 16px 8px;
+  font-size: 14px;
+}
+
+.Contract__table tr td {
+  padding: 8px;
+  max-width: 150px;
+  text-align: center;
+  color: #000;
+  font-weight: 400;
+  font-size: 14px;
+  border: 1px solid #020201;
+}
+.ContractPDF__desc.md {
+  font-size: 16px;
+}
